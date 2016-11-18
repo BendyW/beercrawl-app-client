@@ -1,5 +1,9 @@
-<form ng-submit="findUser(username, password_hash)">
-    <input type="text" ng-model="username" placeholder="username">
-    <input type="text" ng-model="password_hash" placeholder="password">
-    <input type="submit" value="SIGN UP">
+<form ng-submit="findUser(user_name, password_hash)">
+    <input type="text" ng-model="user_name" placeholder="username">
+    <input type="password" ng-model="password_hash" placeholder="password">
+    <input type="submit" value="SIGN IN">
 </form>
+
+<div ng-show="wrongPassword">
+    <p>incorrect password, please try again!</p>
+</div>

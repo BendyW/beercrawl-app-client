@@ -7,3 +7,7 @@ ctrl.get('/', function(req, res, next) {
 });
 
 module.exports = ctrl;
+<<<<<<< HEAD
+=======
+
+>>>>>>> ben-dev
