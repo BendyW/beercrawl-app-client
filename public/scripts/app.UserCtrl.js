@@ -23,25 +23,25 @@ angular.module('beerCrawl')
                 console.log(err)
             })
         };
-        $scope.logIn = function(user){
-            user = null;
-            console.log(user, ' --------this is user');
-            if (user == null){ // change to if user is found
-                $location.path('/account/home');
-                console.log('log in success' + $rootScope.loggedIn);
-                $rootScope.loggedIn = true;
-                // return false;
-            }
-            else if (user != null){ // password wrong
-                $rootScope.wrongPassword = true;
-                console.log('wrong passport = '+ $rootScope.wrongPassword);
-                $location.path('/account/login');
-            }
-            else { // no user found
-                $rootScope.userNotFound = true;
-                console.log('user not found  = ' + $rootScope.userNotFound);
-                // show please register
-                $location.path('/account/register');
-            }
+        $scope.logIn = function(response){
+            console.log(response);
+            // console.log(user, ' --------this is user');
+            // if (user == null){ // change to if user is found
+            //     $location.path('/account/home');
+            //     console.log('log in success' + $rootScope.loggedIn);
+            //     $rootScope.loggedIn = true;
+            //     // return false;
+            // }
+            // else if (user != null){ // password wrong
+            //     $rootScope.wrongPassword = true;
+            //     console.log('wrong passport = '+ $rootScope.wrongPassword);
+            //     $location.path('/account/login');
+            // }
+            // else { // no user found
+            //     $rootScope.userNotFound = true;
+            //     console.log('user not found  = ' + $rootScope.userNotFound);
+            //     // show please register
+            //     $location.path('/account/register');
+            // }
         }
     });
