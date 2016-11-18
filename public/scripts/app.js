@@ -11,15 +11,15 @@ angular.module('beerCrawl', [ 'ngRoute'
                 templateUrl: 'ngViews/home.html',
                 controller: 'HomeCtrl'
             })
-            .when('/register', {
+            .when('/account/register', {
                 templateUrl: 'ngViews/register.html',
                 controller: 'UserCtrl'
             })
-            .when('/login', {
+            .when('/account/login', {
                 templateUrl: 'ngViews/login.html',
                 controller: 'UserCtrl'
             })
-            .when('/account', {
+            .when('/account/home', {
                 templateUrl: 'ngViews/account.html',
                 controller: 'UserCtrl'
             });

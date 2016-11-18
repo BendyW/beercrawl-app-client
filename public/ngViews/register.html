@@ -1,6 +1,10 @@
-<form ng-submit="createUser(email, username, password_hash)">
+<form ng-submit="createUser(email, user_name, password_hash)">
     <input type="email" ng-model="email" placeholder="email">
-    <input type="text" ng-model="username" placeholder="username">
-    <input type="text" ng-model="password_hash" placeholder="password">
+    <input type="text" ng-model="user_name" placeholder="username">
+    <input type="password" ng-model="password_hash" placeholder="password">
     <input type="submit" value="SIGN UP">
 </form>
+
+<div ng-show="userNotFound">
+    <p>username not found, please register</p>
+</div>
