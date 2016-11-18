@@ -1,7 +1,7 @@
 <form ng-submit="findUser(user_name, password_hash)">
     <input type="text" ng-model="user_name" placeholder="username">
     <input type="password" ng-model="password_hash" placeholder="password">
-    <input ng-click="logIn()" type="submit" value="SIGN IN">
+    <input type="submit" value="SIGN IN">
 </form>
 
 <div ng-show="wrongPassword">
