@@ -3,6 +3,7 @@ console.log('team ctrl connected');
 angular.module('beerCrawl')
     .controller('TeamCtrl', function($scope, $http) {
         $scope.createTeam = function(team_name, user_id){
+            console.log('ay')
             $http({
                 url: 'http://localhost:9292/api/teams/',
                 method: 'post',

@@ -8,6 +8,8 @@ angular.module('beerCrawl')
                 method: 'post',
                 params: {email: email, user_name: user_name, password_hash: password_hash}
             }).success(function(results){
+                console.log(results);
+                $location.url('/');
             }).error(function(err){
                 console.log(err)
             })
@@ -15,20 +17,19 @@ angular.module('beerCrawl')
         $scope.findUser = function(user_name, password_hash){
             console.log('hit-----');
 
-            console.log(user_name)
             var data ={user_name: user_name, password_hash: password_hash}
             $http.post('http://localhost:9292/api/users/login', data )
                 .then(function(response){
-                    console.log(response);
-                    if(response.data[0][3]){
+                    if(response.data[2][1] == true){
                         $location.url('/account/home');
                         $rootScope.loggedIn = true;
                         console.log($scope.loggedIn);
+                        console.log(response.data);
                     }
                     else{
                         $location.url('/account/login');
                         $scope.wrongPassword = true;
-                        console.log('wrong passport = '+ $scope.wrongPassword);
+                        console.log('wrong password = '+ $scope.wrongPassword);
                         console.log($location);
                     }
 
