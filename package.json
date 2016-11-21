@@ -12,11 +12,7 @@
     "cookie-parser": "~1.4.3",
     "debug": "~2.2.0",
     "ejs": "~2.4.1",
-<<<<<<< HEAD
     "express": "~4.13.4",
-=======
-    "express": "^4.13.4",
->>>>>>> ben-dev
     "gulp": "^3.9.1",
     "gulp-nodemon": "^2.2.1",
     "gulp-sass": "^2.3.2",

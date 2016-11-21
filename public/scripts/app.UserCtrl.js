@@ -23,13 +23,13 @@ angular.module('beerCrawl')
                     if(response.data[2][1] == true){
                         $location.url('/account/home');
                         $rootScope.loggedIn = true;
-                        console.log($scope.loggedIn);
+                        console.log($rootScope.loggedIn);
                         console.log(response.data);
                     }
                     else{
                         $location.url('/account/login');
-                        $scope.wrongPassword = true;
-                        console.log('wrong password = '+ $scope.wrongPassword);
+                        $rootScope.wrongPassword = true;
+                        console.log('wrong password = '+ $rootScope.wrongPassword);
                         console.log($location);
                     }
 
