@@ -3,8 +3,8 @@
     <input type="submit" value="CREATE TEAM">
 </form>
 <section>
-    <article ng-repeat="team in posts">
-        <h3 ng-mouseover="showTeamJoin()">{{team.team_name}}</h3>
+    <article ng-repeat="team in posts" ng-init="team.teamJoiner = true">
+        <h3 ng-mouseenter="showTeamJoin()">{{team.team_name}}</h3>
         <div ng-show="teamJoiner">
             <form ng-submit="joinTeam(team_name, user_id)">
                 <input type="hidden" ng-model="team_name">

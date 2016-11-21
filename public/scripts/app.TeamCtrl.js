@@ -29,7 +29,7 @@ angular.module('beerCrawl')
         $scope.showTeamJoin = function(){
             console.log('hit');
             console.log($scope.posts);
-            $scope.teamJoiner = true;
+            // $scope.teamJoiner = true;
         };
         $scope.joinTeam = function(team_name, user_id){
             $http({
