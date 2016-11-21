@@ -1,7 +1,6 @@
 console.log('event ctrl connected');
-
 angular.module('beerCrawl')
-    .controller('EventCtrl', function($scope, $http) {
+    .controller('EventCtrl', function($scope, $http, uiGmapGoogleMapApi) {
         $scope.createEvent = function(event_name, bar_crawl, start_time){
             $http({
                 url: 'http://localhost:9292/api/events/',
@@ -13,11 +12,11 @@ angular.module('beerCrawl')
                 console.log(err)
             })
         };
-        $scope.joinTeam = function(team_name, user_id){
+        $scope.joinEvent = function(event_name, team_id){
             $http({
                 url: 'http://localhost:9292/api/events/',
                 method: 'patch',
-                params: {team_name: team_name, user_id: user_id}
+                params: {event_name: event_name, team_id: user_id}
             }).success(function(results){
             }).error(function(err){
                 console.log(err)

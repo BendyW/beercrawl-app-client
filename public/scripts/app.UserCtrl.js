@@ -7,24 +7,27 @@ angular.module('beerCrawl')
                 url: 'http://localhost:9292/api/users/',
                 method: 'post',
                 params: {email: email, user_name: user_name, password_hash: password_hash}
-            }).success(function(results){
-                console.log(results);
-                $location.url('/');
+            }).success(function(response){
+                console.log(response);
+                $location.url('/account/home');
+
             }).error(function(err){
                 console.log(err)
             })
         };
         $scope.findUser = function(user_name, password_hash){
             console.log('hit-----');
-
             var data ={user_name: user_name, password_hash: password_hash}
             $http.post('http://localhost:9292/api/users/login', data )
                 .then(function(response){
                     if(response.data[2][1] == true){
-                        $location.url('/account/home');
-                        $rootScope.loggedIn = true;
-                        console.log($rootScope.loggedIn);
+                        $location.url('/account/registerTeam');
                         console.log(response.data);
+                        $rootScope.session = {
+                            loggedIn: true,
+                            user_id: response.data[4][1],
+                            user_name: response.data[3][1]
+                        }
                     }
                     else{
                         $location.url('/account/login');
@@ -32,7 +35,6 @@ angular.module('beerCrawl')
                         console.log('wrong password = '+ $rootScope.wrongPassword);
                         console.log($location);
                     }
-
                 })
         };
     });

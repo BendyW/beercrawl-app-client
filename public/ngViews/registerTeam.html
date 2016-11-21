@@ -1,16 +1,34 @@
+<div ng-show="session.loggedIn">
+    <p> yo u logged in </p>
+</div>
 <form ng-submit="createTeam(team_name)">
     <input type="text" ng-model="team_name" placeholder="team name">
     <input type="submit" value="CREATE TEAM">
 </form>
 <section>
-    <article ng-repeat="team in posts" ng-init="team.teamJoiner = true">
-        <h3 ng-mouseenter="showTeamJoin()">{{team.team_name}}</h3>
-        <div ng-show="teamJoiner">
-            <form ng-submit="joinTeam(team_name, user_id)">
-                <input type="hidden" ng-model="team_name">
-                <input type="hidden" ng-model="user_id">
-                <input type="submit" value="JOIN {{team.team_name}}" >
+    <div ng-mouseenter="teamJoiner = true" ng-mouseleave="teamJoiner = false" class="team-name" ng-repeat="team in posts | unique: 'team_name'" ng-init="teamJoiner = false">
+        <h3>{{team.team_name}}</h3>
+        <div class = "team-join-button" ng-show="teamJoiner">
+            <form ng-submit="joinTeam(team.team_name, user_id)">
+                <input type="hidden" ng-model="team.team_name">
+                <input type="submit" value="join {{team.team_name}} !!!" >
             </form>
         </div>
-    </article>
+    </div>
 </section>
+<div ng-show="joinedTeam" id="event-list">
+    <h1> welcome to team {{session.team_name}}</h1>
+    <h1> join an event! </h1>
+    <!--events team is registered for -->
+    <div ng-mouseenter="eventJoiner = true" ng-mouseleave="eventJoiner = false" ng-init="eventJoiner = false" ng-repeat="event in events">
+        <h4>{{event.event_name}}</h4>
+        <p>{{event.bar_crawl}}</p>
+        <p>{{event.start_time}}</p>
+        <div class = "event-join-button" ng-show="eventJoiner">
+            <form ng-submit="joinEvent(event.event_name, team_id)">
+                <input type="hidden" ng-model="event.event_name">
+                <input type="submit" value="join {{event.event_name}} !!!" >
+            </form>
+        </div>
+    </div>
+</div>

@@ -7,6 +7,8 @@
   },
   "dependencies": {
     "angular": "^1.5.8",
+    "angular-filter": "^0.5.11",
+    "angular-google-maps": "^2.4.0",
     "angular-route": "^1.5.8",
     "body-parser": "~1.15.1",
     "cookie-parser": "~1.4.3",
