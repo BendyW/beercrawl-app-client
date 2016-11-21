@@ -11,7 +11,6 @@ angular.module('beerCrawl', [ 'ngRoute'
                 templateUrl: 'ngViews/home.html',
                 controller: 'HomeCtrl'
             })
-<<<<<<< HEAD
             .when('/register', {
                 templateUrl: 'ngViews/register.html',
                 controller: 'UserCtrl'
@@ -21,19 +20,12 @@ angular.module('beerCrawl', [ 'ngRoute'
                 controller: 'UserCtrl'
             })
             .when('/account', {
-=======
-            .when('/account/register', {
-                templateUrl: 'ngViews/register.html',
-                controller: 'UserCtrl'
-            })
-            .when('/account/login', {
-                templateUrl: 'ngViews/login.html',
-                controller: 'UserCtrl'
-            })
-            .when('/account/home', {
->>>>>>> ben-dev
                 templateUrl: 'ngViews/account.html',
                 controller: 'UserCtrl'
+            })
+            .when('/account/registerTeam', {
+                templateUrl: 'ngViews/registerTeam.html',
+                controller: 'TeamCtrl'
             });
         $routeProvider.otherwise({ redirectTo: '/' });
     }
