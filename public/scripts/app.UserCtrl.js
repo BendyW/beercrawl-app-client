@@ -12,7 +12,7 @@ angular.module('beerCrawl')
                 params: {email: email, user_name: user_name, password_hash: password_hash}
             }).success(function(results){
                 console.log(results);
-                $location.url('/');
+                $location.url('/')
             }).error(function(err){
                 console.log(err)
             })
@@ -72,4 +72,5 @@ angular.module('beerCrawl')
         //
         //     }
         //}
+
     });
