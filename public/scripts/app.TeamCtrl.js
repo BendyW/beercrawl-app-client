@@ -11,7 +11,7 @@ angular.module('beerCrawl')
                 params: {team_name: team_name, user_id: $rootScope.session.user_id}
                 // store active user in sessions
             }).success(function(response){
-                console.log(response)
+                console.log(response);
                 $scope.showTeams();
             }).error(function(err){
                 console.log(err)
@@ -52,11 +52,12 @@ angular.module('beerCrawl')
             });
         };
         $scope.showEvents();
-        $scope.joinEvent = function(event_name, team_id){
+        $scope.joinEvent = function(event_name){
             $http({
                 url: 'http://localhost:9292/api/events/',
                 method: 'post',
                 params: {event_name: event_name}
-            })
+            });
+            // on joining event send scope variable of bar crawl over and then in event controller use data array correlated to bar crawl name?
         }
     });

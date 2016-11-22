@@ -1,0 +1,4 @@
+<div id="map"></div>
+<div id="repeat" ng-repeat="marker in markers | orderBy: 'name'">
+    <a href="#" ng-click="openInfoWindow($event, marker)">{{marker.title}}</a>
+</div>

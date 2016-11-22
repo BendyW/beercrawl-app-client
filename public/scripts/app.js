@@ -30,6 +30,10 @@ angular.module('beerCrawl', [ 'ngRoute', 'angular.filter'
             .when('/account/team', {
                 templateUrl: 'ngViews/team.html',
                 controller: 'TeamCtrl'
+            })
+            .when('/account/event', {
+                templateUrl: 'ngViews/event.html',
+                controller: 'EventCtrl'
             });
         $routeProvider.otherwise({ redirectTo: '/' });
     }

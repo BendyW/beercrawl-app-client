@@ -21,3 +21,21 @@ a {
   width: 50%;
   float: right;
   clear: both; }
+
+#map {
+  height: 500px;
+  width: 500px; }
+
+.infoWindowContent {
+  font-size: 12px;
+  border-top: 1px solid #ccc;
+  padding-top: 10px; }
+
+h2 {
+  margin-bottom: 0;
+  margin-top: 0;
+  font-size: 16px; }
+
+#repeat {
+  display: inline;
+  padding: 2%; }
