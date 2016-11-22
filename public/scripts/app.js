@@ -1,6 +1,6 @@
 console.log('connected');
 
-angular.module('beerCrawl', [ 'ngRoute'
+angular.module('beerCrawl', [ 'ngRoute','angular.filter'
 ]).config([
     '$locationProvider',
     '$routeProvider',

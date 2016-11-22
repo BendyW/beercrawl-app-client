@@ -2,3 +2,14 @@
     <input type="text" ng-model="team_name" placeholder="team name">
     <input type="submit" value="CREATE TEAM">
 </form>
+<section>
+    <article ng-repeat="team in posts |unique:'team_name'" ng-init="teamJoiner = true">
+        <h3 ng-mouseover="teamJoiner=!teamJoiner">{{team.team_name}}</h3>
+        <div ng-show="teamJoiner">
+            <form ng-submit="joinTeam(team.id)">
+                <input type="hidden" ng-model="team.id" >
+                <input type="submit" value="JOIN {{team.team_name}}" >
+            </form>
+        </div>
+    </article>
+</section>
