@@ -7,8 +7,9 @@
     <option value="RN">River North</option>
 </select>
 <input ng-click="reloadMap()" id="submit" type="submit" value="LOAD MAP">
-
+<div id="location-list">
 <div id="repeat" ng-repeat="marker in markers">
 
     <a href="#" ng-click="openInfoWindow($event, marker)">{{$index +1}}. {{marker.title}}</a>
+</div>
 </div>
