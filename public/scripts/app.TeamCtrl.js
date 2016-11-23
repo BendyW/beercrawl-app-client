@@ -36,7 +36,7 @@ angular.module('beerCrawl')
                 console.log(response.team_name);
                 $rootScope.session.team_name = response.team_name;
                 console.log($rootScope.session.user_id + ' joined team ' + $rootScope.session.team_name);
-                $scope.joinedTeam = true;
+                // $scope.joinedTeam = true;
             }).error(function(err){
                 console.log(err)
             })

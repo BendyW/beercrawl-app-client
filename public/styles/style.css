@@ -32,10 +32,14 @@ a {
   padding-top: 10px; }
 
 h2 {
-  margin-bottom: 0;
-  margin-top: 0;
+  margin-bottom: 4px;
+  margin-top: 2px;
   font-size: 16px; }
 
 #repeat {
   display: inline;
-  padding: 2%; }
+  padding: 1%; }
+
+h4 {
+  margin-bottom: 4px;
+  margin-top: 2px; }
