@@ -3,6 +3,8 @@
   <head>
     <title><%= title %></title>
     <link rel='stylesheet' href='/styles/style.css' />
+    <link href="https://fonts.googleapis.com/css?family=Bungee+Inline" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Bungee+Inline|Ravi+Prakash" rel="stylesheet">
     <script src="/scripts/barData.js"></script>
     <script src="/scripts/angular.min.js" ></script>
     <script src="/scripts/angular-route.min.js" ></script>
@@ -14,7 +16,26 @@
     <script src="/scripts/app.UserCtrl.js"></script>
     <script src="/scripts/app.TeamCtrl.js"></script>
   </head>
+
   <body>
-    <div ng-view></div>
+
+  <section>
+    <header>
+      <nav>
+        <ul>
+          <li><a href="/#!/home">HOME</a></li>
+          <li><a href="/#!/about">ABOUT</a></li>
+          <li><a href="/#!/account/login">CONTACT</a></li>
+          <li><a href="/#!/account/login">ACCOUNT</a></li>
+          <li><a href="#">EVENTS</a></li>
+        </ul>
+      </nav>
+            <!-- <div class="border"></div> -->
+      <img class="logo" src="images/logo-1.svg">
+      <!-- <div class="logo"></div> -->
+    </header>
+      <div class="line-seperator"></div>
+  </section>
+      <div ng-view></div>
   </body>
 </html>

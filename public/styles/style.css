@@ -1,13 +1,57 @@
+* {
+  margin: 0;
+  padding: 0; }
+
 body {
   padding: 0;
   margin: 0;
-  font-family: 'Helvetica', Arial, sans-serif;
-  font-size: 16px; }
+  font-family: 'Ravi Prakash', cursive;
+  font-size: 16px;
+  background-color: #66a5a4;
+  overflow: scroll; }
+
+section {
+  background: #fbf8cd; }
+
+header {
+  width: 960px;
+  height: 80px;
+  margin: 0 auto;
+  text-align: center;
+  position: relative; }
+
+nav li {
+  display: inline-block;
+  padding: 40px 40px 40px 0;
+  font-family: 'Bungee Inline', cursive;
+  color: #e9563a; }
+
+nav li:nth-child(3) {
+  padding-right: 120px; }
+
+nav li:nth-child(4) {
+  padding-left: 120px; }
+
+.logo {
+  background-size: 130px 130px;
+  width: 130px;
+  height: 130px;
+  position: absolute;
+  top: 10px;
+  left: 440px; }
+
+.line-seperator {
+  height: 5px;
+  width: 100%;
+  top: 80px;
+  background: #414242;
+  border-bottom: 1px solid #414242; }
 
 a {
-  color: #000000;
+  color: #e9563a;
   text-decoration: none; }
 
+<<<<<<< HEAD
 .team-name {
   height: 50px;
   margin: 0;
@@ -47,4 +91,13 @@ h4 {
   margin-top: 2px; }
 
 #location-list {
+=======
+.topmap {
+  background-size: 960px 568px;
+  width: 960px;
+  height: 568px;
+  margin: 0px auto;
+  top: 57px;
+  left: 0px;
+>>>>>>> d1ad4cb733211399a2003edf83efcdfb5e56a046
   position: absolute; }
