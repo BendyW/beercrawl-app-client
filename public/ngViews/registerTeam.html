@@ -27,7 +27,6 @@
 <div ng-show="joinedTeam" id="event-list">
     <h1> welcome to team {{session.team_name}}</h1>
     <h1> join an event! </h1>
-    <!--events team is registered for -->
     <div ng-mouseenter="eventJoiner = true" ng-mouseleave="eventJoiner = false" ng-init="eventJoiner = false" ng-repeat="event in events">
         <h4>{{event.event_name}}</h4>
         <p>{{event.bar_crawl}}</p>

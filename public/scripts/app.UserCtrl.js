@@ -4,7 +4,6 @@ console.log('user ctrl connected');
 angular.module('beerCrawl')
     .controller('UserCtrl', function($scope, $http, $location, $rootScope) {
 
-
         $scope.createUser = function (email, user_name, password_hash) {
             $http({
                 url: 'http://localhost:9292/api/users/',
@@ -40,6 +39,7 @@ angular.module('beerCrawl')
                 .then(function(response){
                     if(response.data[2][1] == true){
                         $location.url('/account/registerTeam');
+                        console.log('this is response.data from find user')
                         console.log(response.data);
                         $rootScope.session = {
                             loggedIn: true,

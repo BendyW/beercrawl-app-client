@@ -1,4 +1,15 @@
 <div id="map"></div>
-<div id="repeat" ng-repeat="marker in markers | orderBy: 'name'">
-    <a href="#" ng-click="openInfoWindow($event, marker)">{{marker.title}}</a>
+
+<select id="neighborhood">
+    <option value="WP">Wicker Park</option>
+    <option value="LP">Lincoln Park</option>
+    <option value="LS">Logan Square</option>
+    <option value="RN">River North</option>
+</select>
+<input ng-click="reloadMap()" id="submit" type="submit" value="LOAD MAP">
+<div id="location-list">
+<div id="repeat" ng-repeat="marker in markers">
+
+    <a href="#" ng-click="openInfoWindow($event, marker)">{{$index +1}}. {{marker.title}}</a>
+</div>
 </div>

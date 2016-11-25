@@ -32,18 +32,7 @@ angular.module('beerCrawl')
             }).success(function(results){
                 $scope.joinedTeam = true;
                 console.log(results)
-// =======
-//         $scope.joinTeam = function(team_name){
-//             $http({
-//                 url: 'http://localhost:9292/api/teams/',
-//                 method: 'patch',
-//                 params: {team_name: team_name, user_id: $rootScope.session.user_id}
-//             }).success(function(response){
-//                 console.log(response.team_name);
-//                 $rootScope.session.team_name = response.team_name;
-//                 console.log($rootScope.session.user_id + ' joined team ' + $rootScope.session.team_name);
-//                 $scope.joinedTeam = true;
-// >>>>>>> b7e68adc48702848eb07da4f4a276b4797c1283e
+
             }).error(function(err){
                 console.log(err)
             })
