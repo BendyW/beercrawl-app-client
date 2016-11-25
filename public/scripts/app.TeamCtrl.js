@@ -49,13 +49,15 @@ angular.module('beerCrawl')
         };
         $scope.showEvents();
         $scope.joinEvent = function(event_id){
+            console.log($rootScope.session);
             $http({
                 url: 'http://localhost:9292/api/teams/' + $rootScope.session.team_id,
                 method: 'patch',
-                params: {event_id: event_id}
+                params: {event_id: event_id, user_id: $rootScope.session.user_id}
             }).success(function(results){
                 console.log(results);
-                $location.url('/account/event')
+                console.log('youre here');
+                $location.url('/account/event');
 
             }).error(function(err){
                 console.log(err)
