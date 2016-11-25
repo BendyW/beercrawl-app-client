@@ -11,18 +11,17 @@ angular.module('beerCrawl')
                 method: 'post',
                 params: {email: email, user_name: user_name, password_hash: password_hash}
             }).success(function (response) {
-
-
                 if(response.id !== undefined) {
                     $rootScope.session = {
                         loggedIn: true,
                         user_id: response.id,
                         user_name: response.user_name,
+                        team_id: response.team_id,
                         exists: response.exists
                     }
                     console.log($rootScope.session);
-                    console.log(response);
-                    $location.url('/account/home');
+                    //console.log(response);
+                    $location.url('/account/registerTeam');
                 }
                 else{
                     $location.url('/account/register')
@@ -36,24 +35,19 @@ angular.module('beerCrawl')
         };
         $scope.findUser = function (user_name, password_hash) {
             console.log('hit-----');
-
-            var data = {user_name: user_name, password_hash: password_hash}
-            $http.post('http://localhost:9292/api/users/login', data)
-                .then(function (response) {
-                    if (response.data[2][1] === true) {
-                        console.log('ya this works');
-                        $location.url('/account/home');
-                        $rootScope.loggedIn = true;
-                        console.log($rootScope.loggedIn);
-
+            var data ={user_name: user_name, password_hash: password_hash}
+            $http.post('http://localhost:9292/api/users/login', data )
+                .then(function(response){
+                    if(response.data[2][1] == true){
+                        $location.url('/account/registerTeam');
+                        console.log(response.data);
                         $rootScope.session = {
                             loggedIn: true,
                             user_id: response.data[4][1],
-                            user_name: response.data[3][1]
-                        }
-                        $location.url('/account/home');
+                            user_name: response.data[3][1],
+                            team_id: response.data[5][1]
 
-                        console.log($rootScope);
+                        }
                     }
                     else {
                         $location.url('/account/login');
@@ -61,7 +55,6 @@ angular.module('beerCrawl')
                         console.log('wrong password = ' + $rootScope.wrongPassword);
                         console.log($location);
                     }
-
                 })
         };
 });

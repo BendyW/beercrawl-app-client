@@ -9,3 +9,43 @@ a {
     color: #000000;
     text-decoration: none;
 }
+
+.team-name {
+    height: 50px;
+    margin: 0;
+    padding: 0;
+    width: 50%;
+}
+
+.team-join-button {
+    float: left;
+}
+
+
+#event-list {
+    width: 50%;
+    float: right;
+    clear:both;
+}
+
+#map{
+    height: 500px;
+    width: 500px;
+}
+
+.infoWindowContent {
+    font-size:  12px;
+    border-top: 1px solid #ccc;
+    padding-top: 10px;
+}
+
+h2 {
+    margin-bottom:0;
+    margin-top: 0;
+    font-size: 16px;
+}
+
+#repeat {
+    display: inline;
+    padding: 2%;
+}

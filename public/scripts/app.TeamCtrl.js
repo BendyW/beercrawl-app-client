@@ -1,18 +1,16 @@
 console.log('team ctrl connected');
 angular.module('beerCrawl')
-    .controller('TeamCtrl', function($scope, $http, $rootScope) {
+    .controller('TeamCtrl', function($scope, $http, $rootScope, $location) {
         $scope.posts = [];
         $scope.createTeam = function(team_name){
             $http({
                 url: 'http://localhost:9292/api/teams/',
                 method: 'post',
                 params: {team_name: team_name, user_id: $rootScope.session.user_id}
-            }).success(function(results){
-                console.log(results);
+                // store active user in sessions
+            }).success(function(response){
+                console.log(response);
                 $scope.showTeams();
-                $rootScope.teamJoiner = true;
-                $rootScope.session.team_id = results.id
-                console.log($rootScope);
             }).error(function(err){
                 console.log(err);
             });
@@ -27,20 +25,49 @@ angular.module('beerCrawl')
         };
         $scope.showTeams();
         $scope.joinTeam = function(team_id){
-            //$scope.posts[team].id
-            // $scope.data = {team_id: team_id, id: $rootScope.session.user_id};
-            // console.log($scope.data);
-            // $http.patch('http://localhost:9292/api/users/' + $rootScope.session.user_id, $scope.data)
-            //     .then(function(response){
-            //         console.log(response);
-            //     });
             $http({
                 url: 'http://localhost:9292/api/users/' + $rootScope.session.user_id,
                 method: 'patch',
                 params: {team_id: team_id, id: $rootScope.session.user_id}
             }).success(function(results){
-
+                $scope.joinedTeam = true;
                 console.log(results)
+// =======
+//         $scope.joinTeam = function(team_name){
+//             $http({
+//                 url: 'http://localhost:9292/api/teams/',
+//                 method: 'patch',
+//                 params: {team_name: team_name, user_id: $rootScope.session.user_id}
+//             }).success(function(response){
+//                 console.log(response.team_name);
+//                 $rootScope.session.team_name = response.team_name;
+//                 console.log($rootScope.session.user_id + ' joined team ' + $rootScope.session.team_name);
+//                 $scope.joinedTeam = true;
+// >>>>>>> b7e68adc48702848eb07da4f4a276b4797c1283e
+            }).error(function(err){
+                console.log(err)
+            })
+        };
+        $scope.showEvents = function(){
+            $http.get('http://localhost:9292/api/events/').success(function (eventResults) {
+                $scope.events = eventResults;
+                console.log(eventResults);
+                console.log('found events')
+            }).error(function(err) {
+                console.log('Fetch failed; it didn\'t happen');
+                console.log(err);
+            });
+        };
+        $scope.showEvents();
+        $scope.joinEvent = function(event_id){
+            $http({
+                url: 'http://localhost:9292/api/teams/' + $rootScope.session.team_id,
+                method: 'patch',
+                params: {event_id: event_id}
+            }).success(function(results){
+                console.log(results);
+                $location.url('/account/event')
+
             }).error(function(err){
                 console.log(err)
             })
