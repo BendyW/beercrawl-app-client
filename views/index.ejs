@@ -15,6 +15,7 @@
     <script src="/scripts/app.HomeCtrl.js"></script>
     <script src="/scripts/app.UserCtrl.js"></script>
     <script src="/scripts/app.TeamCtrl.js"></script>
+    <script src="/scripts/app.LogOut.js"></script>
   </head>
 
   <body>
@@ -26,9 +27,17 @@
           <li><a href="/#!/home">HOME</a></li>
           <li><a href="/#!/about">ABOUT</a></li>
           <li><a href="/#!/account/">CONTACT</a></li>
-          <li><a href="/#!/account/login">LOGIN</a></li>
-          <li><a href="/#!/account/register">REGISTER</a></li>
           <li><a href="#!/account/event">EVENTS</a></li>
+          <section id="notLogged">
+            <li><a href="/#!/account/login">LOGIN</a></li>
+            <li><a href="/#!/account/register">REGISTER</a></li>
+          </section>
+          <div ng-controller="LogOut"
+               id="logged">
+            <section>
+              <button ng-click="logOutClick()">SIGN OUT</button>
+            </section>
+          </div>
         </ul>
       </nav>
             <!-- <div class="border"></div> -->

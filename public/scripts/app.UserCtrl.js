@@ -40,14 +40,14 @@ angular.module('beerCrawl')
                 .then(function(response){
                     if(response.data[2][1] == true){
                         $location.url('/account/registerTeam');
-                        console.log('this is response.data from find user')
-                        console.log(response.data);
+                      //  console.log(response.data);
+                        document.getElementById('logged').style.display = 'block';
+                        document.getElementById('notLogged').style.display = 'none';
                         $rootScope.session = {
                             loggedIn: true,
                             user_id: response.data[4][1],
                             user_name: response.data[3][1],
                             team_id: response.data[5][1]
-
                         }
                     }
                     else {
@@ -58,27 +58,27 @@ angular.module('beerCrawl')
                     }
                 })
         };
-
-        $scope.logIn = function(user){
-            user = null;
-            console.log(user, ' --------this is user');
-            if (user == null){ // change to if user is found
-                $location.path('/account/home');
-                console.log('log in success' + $rootScope.loggedIn);
-                $rootScope.loggedIn = true;
-                // return false;
-            }
-            else if (user != null){ // password wrong
-                $rootScope.wrongPassword = true;
-                console.log('wrong passport = '+ $rootScope.wrongPassword);
-                $location.path('/account/login');
-            }
-            else { // no user found
-                $rootScope.userNotFound = true;
-                console.log('user not found  = ' + $rootScope.userNotFound);
-                // show please register
-                $location.path('/account/register');
-            }
-        }
+        //
+        // $scope.logIn = function(user){
+        //     user = null;
+        //     console.log(user, ' --------this is user');
+        //     if (user == null){ // change to if user is found
+        //         $location.path('/account/home');
+        //         console.log('log in success' + $rootScope.loggedIn);
+        //         $rootScope.loggedIn = true;
+        //         // return false;
+        //     }
+        //     else if (user != null){ // password wrong
+        //         $rootScope.wrongPassword = true;
+        //         console.log('wrong passport = '+ $rootScope.wrongPassword);
+        //         $location.path('/account/login');
+        //     }
+        //     else { // no user found
+        //         $rootScope.userNotFound = true;
+        //         console.log('user not found  = ' + $rootScope.userNotFound);
+        //         // show please register
+        //         $location.path('/account/register');
+        //     }
+        // }
 
     });

@@ -31,10 +31,11 @@ angular.module('beerCrawl')
                 params: {team_id: team_id, id: $rootScope.session.user_id}
             }).success(function(results){
                 $scope.joinedTeam = true;
-                console.log(results)
+                console.log($rootScope.session);
 
             }).error(function(err){
                 console.log(err)
+                console.log($rootScope.session)
             })
         };
         $scope.showEvents = function(){
@@ -61,6 +62,7 @@ angular.module('beerCrawl')
 
             }).error(function(err){
                 console.log(err)
+                console.log($rootScope.session);
             })
         };
     });

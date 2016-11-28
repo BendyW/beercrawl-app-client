@@ -6,9 +6,7 @@ body {
   padding: 0;
   margin: 0;
   font-family: 'Ravi Prakash', cursive;
-  font-size: 16px;
-  background-color: #66a5a4;
-  overflow: scroll; }
+  font-size: 16px; }
 
 section {
   background: #fbf8cd; }
@@ -22,7 +20,7 @@ header {
 
 nav li {
   display: inline-block;
-  padding: 40px 40px 40px 0;
+  padding: 5px 5px 5px 0;
   font-family: 'Bungee Inline', cursive;
   color: #e9563a; }
 
@@ -32,13 +30,41 @@ nav li:nth-child(3) {
 nav li:nth-child(4) {
   padding-left: 120px; }
 
+body > section > header > nav > ul > div {
+  display: none;
+  style: none; }
+
+#logged > section > button {
+  border: none;
+  font-size: 16px;
+  font-family: 'Bungee Inline', cursive;
+  color: #e9563a;
+  background: #fbf8cd;
+  float: right;
+  cursor: pointer; }
+
+#notLogged {
+  display: block;
+  float: right; }
+
 .logo {
   background-size: 130px 130px;
   width: 130px;
   height: 130px;
   position: absolute;
   top: 10px;
-  left: 440px; }
+  left: 440px;
+  overflow: auto;
+  z-index: 1; }
+
+.border {
+  width: 2000px;
+  height: 7px;
+  background-color: #414242;
+  margin: 0 auto;
+  top: 80px;
+  text-align: center;
+  position: absolute; }
 
 .line-seperator {
   height: 5px;
@@ -47,11 +73,14 @@ nav li:nth-child(4) {
   background: #414242;
   border-bottom: 1px solid #414242; }
 
+#home {
+  margin: 40px 40px 40px 40px;
+  padding: 40px 30px 40px 0; }
+
 a {
   color: #e9563a;
   text-decoration: none; }
 
-<<<<<<< HEAD
 .team-name {
   height: 50px;
   margin: 0;
@@ -60,6 +89,9 @@ a {
 
 .team-join-button {
   float: left; }
+
+body > section > header > nav {
+  z-index: 1; }
 
 #event-list {
   width: 50%;
@@ -75,12 +107,8 @@ a {
   border-top: 1px solid #ccc;
   padding-top: 10px; }
 
-h2 {
-  margin-bottom: 4px;
-  margin-top: 2px;
-  font-size: 16px; }
-
 #repeat {
+  display: inline;
   padding: 1%; }
 
 #location-list {
@@ -91,13 +119,15 @@ h4 {
   margin-top: 2px; }
 
 #location-list {
-=======
-.topmap {
-  background-size: 960px 568px;
-  width: 960px;
-  height: 568px;
-  margin: 0px auto;
-  top: 57px;
-  left: 0px;
->>>>>>> d1ad4cb733211399a2003edf83efcdfb5e56a046
   position: absolute; }
+
+.image {
+  position: relative;
+  width: 100%;
+  /* for IE 6 */ }
+
+h2 {
+  position: absolute;
+  top: 100px;
+  left: 0;
+  width: 100%; }

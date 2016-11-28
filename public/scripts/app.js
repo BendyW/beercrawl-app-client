@@ -42,5 +42,5 @@ angular.module('beerCrawl', [ 'ngRoute','angular.filter'
             });
 
         $routeProvider.otherwise({ redirectTo: '/' });
-    }
+}
 ]);
