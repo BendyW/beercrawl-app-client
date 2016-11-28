@@ -1,6 +1,7 @@
 console.log('connected');
 
-angular.module('beerCrawl', [ 'ngRoute', 'angular.filter'
+angular.module('beerCrawl', [ 'ngRoute','angular.filter'
+
 ]).config([
     '$locationProvider',
     '$routeProvider',
@@ -34,7 +35,12 @@ angular.module('beerCrawl', [ 'ngRoute', 'angular.filter'
             .when('/account/event', {
                 templateUrl: 'ngViews/event.html',
                 controller: 'EventCtrl'
+            })
+            .when('/about', {
+                templateUrl: 'ngViews/about.html',
+                controller: 'HomeCtrl'
             });
+
         $routeProvider.otherwise({ redirectTo: '/' });
     }
 ]);

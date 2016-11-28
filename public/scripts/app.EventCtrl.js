@@ -15,16 +15,18 @@ angular.module('beerCrawl')
                 console.log(err)
             })
         };
-        $scope.joinEvent = function(event_name, team_id){
-            $http({
-                url: 'http://localhost:9292/api/events/',
-                method: 'patch',
-                params: {event_name: event_name, team_id: user_id}
-            }).success(function(results){
-            }).error(function(err){
-                console.log(err)
-            })
-        };
+        // $scope.joinEvent = function(event_id){
+        //     $http({
+        //         url: 'http://localhost:9292/api/teams/' + $rootScope.session.team_id,
+        //         method: 'patch',
+        //         params: {event_id: event_id}
+        //     }).success(function(results){
+        //         console.log(results);
+        //         console.log(params);
+        //     }).error(function(err){
+        //         console.log(err)
+        //     })
+        // };
 
         var mapCenter = {
             lat: 41.8781,
