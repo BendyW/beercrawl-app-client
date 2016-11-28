@@ -36,8 +36,8 @@ var wickerParkBars = [
         challenge1: 'CHALLENGE ONE: Share a margarita pitcher with the team',
         challenge2: 'CHALLENGE TWO: Eat three tacos',
         challenge3: 'CHALLENGE THREE: Share a margarita pitcher with the team and eat three tacos ',
-        lat: '41.909172',
-        lng: '-87.6771055'
+        lat: '41.909206',
+        lng: '-87.677422'
     },
     {
         name: 'Nick\'s Beer Garden',
@@ -64,40 +64,13 @@ var loganSquareCenter = {
 };
 var loganSquareBars = [
     {
-        name: 'Slippery Slope',
-        address:'2357 N Milwaukee Ave, Chicago, IL 60647',
-        challenge1: 'dope speakeasy bar thing',
-        challenge2: 'lotzzz of maps',
-        challenge3: 'lotzzz of maps',
-        lat: '41.9242',
-        lng: '-87.7011724'
-    },
-    {
         name: 'Revolution',
         address:'2323 N Milwaukee Ave, Chicago, IL 60647',
-        challenge1: 'dope speakeasy bar thing',
-        challenge2: 'lotzzz of maps',
-        challenge3: 'lotzzz of maps',
-        lat: '41.9251539',
-        lng: '-87.699606'
-    },
-    {
-        name: 'The Owl',
-        address:'2521 N Milwaukee Ave, Chicago, IL 60647',
-        challenge1: 'dope speakeasy bar thing',
-        challenge2: 'lotzzz of maps',
-        challenge3: 'lotzzz of maps',
-        lat: '41.9273108',
-        lng: '-87.7061927'
-    },
-    {
-        name: 'The Whistler',
-        address:'2421 N Milwaukee Ave, Chicago, IL 60647',
-        challenge1: 'dope speakeasy bar thing',
-        challenge2: 'lotzzz of maps',
-        challenge3: 'lotzzz of maps',
-        lat: '41.925377',
-        lng: '-87.701037'
+        challenge1: 'CHALLENGE ONE: Round of beer',
+        challenge2: 'CHALLENGE TWO: Round of beer and a shot',
+        challenge3: 'CHALLENGE THREE: Play a sound of "penis"',
+        lat: '41.923475',
+        lng: '-87.698277'
     },
     {
         name: 'Cole\'s Bar',
@@ -105,8 +78,35 @@ var loganSquareBars = [
         challenge1: 'CHALLENGE ONE: Selfie with the bathroom graffiti',
         challenge2: 'CHALLENGE TWO: Team has to shotgun a round of PBR',
         challenge3: 'CHALLENGE THREE: Chug a beer upside down',
-        lat: '41.923664',
-        lng: '-87.7009998'
+        lat: '41.923734',
+        lng: '-87.698758'
+    },
+    {
+        name: 'Slippery Slope',
+        address:'2357 N Milwaukee Ave, Chicago, IL 60647',
+        challenge1: 'CHALLENGE ONE: Skee-ball',
+        challenge2: 'CHALLENGE TWO: Start the cha-cha slide on the dancefloor',
+        challenge3: 'CHALLENGE THREE: Nude selfie in the photobooth',
+        lat: '41.924007',
+        lng: '-87.699131'
+    },
+    {
+        name: 'The Whistler',
+        address:'2421 N Milwaukee Ave, Chicago, IL 60647',
+        challenge1: 'CHALLENGE ONE: Balance a beer on your head',
+        challenge2: 'CHALLENGE TWO: Take a photo with the art installation ',
+        challenge3: 'CHALLENGE THREE: Dance on stage',
+        lat: '41.925377',
+        lng: '-87.701037'
+    },
+    {
+        name: 'The Owl',
+        address:'2521 N Milwaukee Ave, Chicago, IL 60647',
+        challenge1: 'CHALLENGE ONE: Plank on a bar stool',
+        challenge2: 'CHALLENGE TWO: PBR & Jamo combo',
+        challenge3: 'CHALLENGE THREE: Put your face underneath the waterfall',
+        lat: '41.927133',
+        lng: '-87.704241'
     }
 ];
 var lincolnParkCenter = {
@@ -151,7 +151,7 @@ var lincolnParkBars = [
         lng: '-87.6516236'
     },
     {
-        name: 'Delilahs',
+        name: 'Delilah\'s',
         address:'2771 N Lincoln Ave, Chicago, IL 60614',
         challenge1: 'CHALLENGE ONE: Steal a shot glass',
         challenge2: 'CHALLENGE TWO: Get a stranger to buy someone else on the team a drink',
@@ -169,46 +169,46 @@ var riverNorthBars = [
     {
         name: 'Rossi\'s',
         address:'412 N State St, Chicago, IL 60654',
-        challenge1: 'yaa',
-        challenge2: 'lotzzz of maps',
-        challenge3: 'lotzzz of maps',
-        lat: '41.8897633',
-        lng: '-87.630389'
-    },
-    {
-        name: 'Howl at the Moon',
-        address:'26 W Hubbard St, Chicago, IL 60654',
-        challenge1: 'get a bucket of something',
-        challenge2: 'lotzzz of maps',
-        challenge3: 'lotzzz of maps',
-        lat: '41.8902781',
-        lng: '-87.6290777'
+        challenge1: 'CHALLENGE ONE: Chug a tall boy',
+        challenge2: 'CHALLENGE TWO: Plank on a bar stool',
+        challenge3: 'CHALLENGE THREE: Switch pants with someone on your team',
+        lat: '41.889749',
+        lng: '-87.628018'
     },
     {
         name: 'Local 22',
         address:'22 E Hubbard St, Chicago, IL 60611',
-        challenge1: 'beeeer',
-        challenge2: 'lotzzz of maps',
-        challenge3: 'lotzzz of maps',
-        lat: '41.8903802',
-        lng: '-87.6278882'
+        challenge1: 'CHALLENGE ONE: Invert yourself',
+        challenge2: 'CHALLENGE TWO: Play a round of kings cup',
+        challenge3: 'CHALLENGE THREE: Karaoke',
+        lat: '41.890111',
+        lng: '-87.627137'
+    },
+    {
+        name: 'Howl at the Moon',
+        address:'26 W Hubbard St, Chicago, IL 60654',
+        challenge1: 'CHALLENGE ONE: Share a bucket',
+        challenge2: 'CHALLENGE TWO: Drink your own bucket?',
+        challenge3: 'CHALLENGE THREE: Wrap toilet paper around a random person at the bar and take a photo',
+        lat: '41.890075',
+        lng: '-87.629090'
     },
     {
         name: 'Three Dots and a Dash',
         address:'435 N Clark St, Chicago, IL 60654',
-        challenge1: 'get tiki drink',
-        challenge2: 'lotzzz of maps',
-        challenge3: 'lotzzz of maps',
-        lat: '41.89032',
-        lng: '-87.6327767'
+        challenge1: 'CHALLENGE ONE: Cocktail',
+        challenge2: 'CHALLENGE TWO: Shot of grenadine',
+        challenge3: 'CHALLENGE THREE: Bali bali or zombie',
+        lat: '41.890266',
+        lng: '-87.631085'
     },
     {
         name: 'Headquarters',
         address:'213 W Institute Pl, Chicago, IL 60610',
-        challenge1: 'Challenge 1: play a game',
-        challenge2: 'Challenge 2',
-        challenge3: 'lotzzz of maps',
-        lat: '41.8971809',
-        lng: '-87.6352357'
+        challenge1: 'CHALLENGE ONE: Win a video game',
+        challenge2: 'CHALLENGE TWO: Throw a penny into a strangers drink',
+        challenge3: 'CHALLENGE THREE: Get strangers to do a dance with you',
+        lat: '41.897395',
+        lng: '-87.635257'
     }
 ];

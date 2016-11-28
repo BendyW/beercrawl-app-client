@@ -1,5 +1,7 @@
 console.log('event ctrl connected');
 
+
+
 angular.module('beerCrawl')
     .controller('EventCtrl', function($scope, $http, $rootScope) {
         $scope.createEvent = function(event_name, bar_crawl, start_time){
@@ -110,6 +112,7 @@ angular.module('beerCrawl')
                 });
 
                 marker.content = '<div class="infoWindowContent">' + info.challenge1 + '<br>' + info.challenge2 + '<br>' + info.challenge3 + '</div>';
+
                 google.maps.event.addListener(marker, 'click', function () {
                     infoWindow.setContent('<h2>' + marker.title + '</h2>' + '<h4>' + marker.address + '</h4>' + marker.content);
                     infoWindow.open($scope.map, marker);
@@ -125,5 +128,8 @@ angular.module('beerCrawl')
                 e.preventDefault();
                 google.maps.event.trigger(selectedMarker, 'click');
             };
-        };
+
+
+            };
+
     });
