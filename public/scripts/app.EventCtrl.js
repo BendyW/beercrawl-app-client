@@ -41,7 +41,9 @@ angular.module('beerCrawl')
         $scope.map = new google.maps.Map(document.getElementById('map'), mapOptions);
         $scope.markers = [];
         var directionsService = new google.maps.DirectionsService;
-        var directionsDisplay = new google.maps.DirectionsRenderer({suppressMarkers: true});
+        var directionsDisplay = new google.maps.DirectionsRenderer({suppressMarkers: true, polylineOptions: {
+            strokeColor: "purple"
+        }});
 
         $scope.reloadMap = function(){
             function reloadMarkers(){
@@ -72,6 +74,13 @@ angular.module('beerCrawl')
             else{
                 console.log('idk what happened')
             }
+
+            // var pinColor = "FF00FF";
+            // var pinImage = new google.maps.MarkerImage("http://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=%E2%80%A2|" + pinColor,
+            //     new google.maps.Size(150, 150),
+            //     new google.maps.Point(0,0),
+            //     new google.maps.Point(10, 34)
+            // );
 
             mapOptions.zoom = 12;
 
@@ -110,6 +119,8 @@ angular.module('beerCrawl')
                     title: info.name,
                     address: info.address
                 });
+
+                marker.setIcon('../images/beer-icon.png')
 
                 marker.content = '<div class="infoWindowContent">' + info.challenge1 + '<br>' + info.challenge2 + '<br>' + info.challenge3 + '</div>';
 
