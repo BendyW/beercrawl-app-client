@@ -32,6 +32,7 @@ angular.module('beerCrawl')
             }).success(function(results){
                 $scope.joinedTeam = true;
                 console.log($rootScope.session);
+                console.log(results);
 
             }).error(function(err){
                 console.log(err)

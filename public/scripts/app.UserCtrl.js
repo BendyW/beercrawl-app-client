@@ -38,6 +38,7 @@ angular.module('beerCrawl')
             var data ={user_name: user_name, password_hash: password_hash}
             $http.post('http://localhost:9292/api/users/login', data )
                 .then(function(response){
+                    console.log(response);
                     if(response.data[2][1] == true){
                         $location.url('/account/registerTeam');
                       //  console.log(response.data);
