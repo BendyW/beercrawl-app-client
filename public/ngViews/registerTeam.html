@@ -1,41 +1,40 @@
 <div ng-show="session.loggedIn">
     <p> yo u logged in </p>
 </div>
-<form ng-submit="createTeam(team_name)">
-    <input type="text" ng-model="team_name" placeholder="team name">
-    <input type="submit" value="CREATE TEAM">
-</form>
-<section>
-    <div ng-mouseenter="teamJoiner = true" ng-mouseleave="teamJoiner = false" class="team-name" ng-repeat="team in posts | unique: 'team_name'" ng-init="teamJoiner = false">
-        <h3>{{team.team_name}}</h3>
-        <div class = "team-join-button" ng-show="teamJoiner">
-            <form ng-submit="joinTeam(team.id)">
-                <input type="hidden" ng-model="team.id" >
-                <input type="submit" value="JOIN {{team.team_name}} !!!" >
-<!--=======-->
-    <!--<div ng-mouseenter="teamJoiner = true" ng-mouseleave="teamJoiner = false" class="team-name" ng-repeat="team in posts | unique: 'team_name'" ng-init="teamJoiner = false">-->
-        <!--<h3>{{team.team_name}}</h3>-->
-        <!--<div class = "team-join-button" ng-show="teamJoiner">-->
-            <!--<form ng-submit="joinTeam(team.team_name, user_id)">-->
-                <!--<input type="hidden" ng-model="team.team_name">-->
-                <!--<input type="submit" value="join {{team.team_name}} !!!" >-->
-<!--&gt;>>>>>> b7e68adc48702848eb07da4f4a276b4797c1283e-->
-            </form>
+
+<div id="teams">
+    <form ng-submit="createTeam(team_name)">
+        <input type="text" ng-model="team_name" placeholder="team name">
+        <input type="submit" value="CREATE TEAM">
+    </form>
+    <section>
+        <h1 class="title">TEAMS</h1>
+        <div ng-mouseover="teamJoiner = true" ng-mouseleave="teamJoiner = false" class="team-name" ng-repeat="team in posts | unique: 'team_name'" ng-init="teamJoiner = false" class="team-list">
+            <h3>{{team.team_name}}</h3>
+            <div class = "team-join-button" ng-show="teamJoiner">
+                <form ng-submit="joinTeam(team.id)" class="team-join-button">
+                    <input type="hidden" ng-model="team.id" >
+                    <input type="submit" value="JOIN {{team.team_name}}" class="team-join-button">
+                </form>
+            </div>
         </div>
-    </div>
-</section>
-<div ng-show="joinedTeam" id="event-list">
-    <h1> welcome to team {{session.team_name}}</h1>
-    <h1> join an event! </h1>
-    <div ng-mouseenter="eventJoiner = true" ng-mouseleave="eventJoiner = false" ng-init="eventJoiner = false" ng-repeat="event in events">
-        <h4>{{event.event_name}}</h4>
-        <p>{{event.bar_crawl}}</p>
-        <p>{{event.start_time}}</p>
-        <div class = "event-join-button" ng-show="eventJoiner">
-            <form ng-submit="joinEvent(event.id)">
-                <input type="hidden" ng-model="event.id">
-                <input type="submit" value="join {{event.event_name}} !!!" >
-            </form>
+    </section>
+</div>
+
+<div id="events">
+    <div ng-show="joinedTeam" id="event-list">
+        <h1> welcome to team {{session.team_name}}</h1>
+        <h1> join an event! </h1>
+        <div ng-mouseenter="eventJoiner = true" ng-mouseleave="eventJoiner = false" ng-init="eventJoiner = false" ng-repeat="event in events">
+            <h4>{{event.event_name}}</h4>
+            <p>{{event.bar_crawl}}</p>
+            <p>{{event.start_time}}</p>
+            <div class = "event-join-button" ng-show="eventJoiner">
+                <form ng-submit="joinEvent(event.id)">
+                    <input type="hidden" ng-model="event.id">
+                    <input type="submit" value="join {{event.event_name}}" >
+                </form>
+            </div>
         </div>
     </div>
 </div>

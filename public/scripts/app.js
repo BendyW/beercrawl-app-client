@@ -29,7 +29,7 @@ angular.module('beerCrawl', [ 'ngRoute','angular.filter'
                 controller: 'TeamCtrl'
             })
             .when('/account/team', {
-                templateUrl: 'ngViews/team.html',
+                templateUrl: 'ngViews/contact.html',
                 controller: 'TeamCtrl'
             })
             .when('/account/event', {
@@ -38,6 +38,10 @@ angular.module('beerCrawl', [ 'ngRoute','angular.filter'
             })
             .when('/about', {
                 templateUrl: 'ngViews/about.html',
+                controller: 'HomeCtrl'
+            })
+            .when('/contact', {
+                templateUrl: 'ngViews/contact.html',
                 controller: 'HomeCtrl'
             });
 

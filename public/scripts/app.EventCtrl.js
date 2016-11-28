@@ -44,8 +44,10 @@ angular.module('beerCrawl')
         $scope.markers = [];
         var directionsService = new google.maps.DirectionsService;
         var directionsDisplay = new google.maps.DirectionsRenderer({suppressMarkers: true, polylineOptions: {
-            strokeColor: "purple"
+            strokeColor: "#e9563a",
+            strokeWeight: 5
         }});
+        console.log(directionsDisplay.polylineOptions)
 
         $scope.reloadMap = function(){
             function reloadMarkers(){
@@ -122,7 +124,7 @@ angular.module('beerCrawl')
                     address: info.address
                 });
 
-                marker.setIcon('../images/beer-icon.png')
+                marker.setIcon('../images/beer-icon.png');
 
                 marker.content = '<div class="infoWindowContent">' + info.challenge1 + '<br>' + info.challenge2 + '<br>' + info.challenge3 + '</div>';
 
@@ -142,7 +144,9 @@ angular.module('beerCrawl')
                 google.maps.event.trigger(selectedMarker, 'click');
             };
 
-
+            var locationList = document.getElementById('location-list');
+            locationList.classList.add('list-background');
             };
+
 
     });
