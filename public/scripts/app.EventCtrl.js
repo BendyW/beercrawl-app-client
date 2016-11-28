@@ -1,7 +1,5 @@
 console.log('event ctrl connected');
 
-
-
 angular.module('beerCrawl')
     .controller('EventCtrl', function($scope, $http, $rootScope) {
         $scope.createEvent = function(event_name, bar_crawl, start_time){
@@ -39,16 +37,16 @@ angular.module('beerCrawl')
         };
 
         $scope.map = new google.maps.Map(document.getElementById('map'), mapOptions);
-        var markers = [];
+        $scope.markers = [];
         var directionsService = new google.maps.DirectionsService;
         var directionsDisplay = new google.maps.DirectionsRenderer({suppressMarkers: true});
 
         $scope.reloadMap = function(){
             function reloadMarkers(){
-                for (var i=0; i<markers.length; i++) {
-                    markers[i].setMap(null);
+                for (var i=0; i<$scope.markers.length; i++) {
+                    $scope.markers[i].setMap(null);
                 }
-                markers = [];
+                $scope.markers = [];
             }
             reloadMarkers();
             var bars, mapCenter;
@@ -81,7 +79,6 @@ angular.module('beerCrawl')
                 waypoints.push({location: new google.maps.LatLng(bars[j].lat, bars[j].lng),
                                 stopover: true})
             }
-            // console.log(waypoints);
 
             directionsService.route({
                 origin: new google.maps.LatLng(bars[0].lat, bars[0].lng),
@@ -103,9 +100,7 @@ angular.module('beerCrawl')
             directionsDisplay.setMap($scope.map);
 
             var infoWindow = new google.maps.InfoWindow();
-            var createMarker = function (locations) {
-            for (var i = 0; i < bars.length; i++) {
-                var info = locations[i];
+            var createMarker = function (info) {
                 var marker = new google.maps.Marker({
                     map: $scope.map,
                     position: new google.maps.LatLng(info.lat, info.lng),
@@ -113,23 +108,22 @@ angular.module('beerCrawl')
                     title: info.name,
                     address: info.address
                 });
+
                 marker.content = '<div class="infoWindowContent">' + info.challenge1 + '<br>' + info.challenge2 + '<br>' + info.challenge3 + '</div>';
                 google.maps.event.addListener(marker, 'click', function () {
                     infoWindow.setContent('<h2>' + marker.title + '</h2>' + '<h4>' + marker.address + '</h4>' + marker.content);
                     infoWindow.open($scope.map, marker);
                 });
-                markers.push(marker);
-                }
+                $scope.markers.push(marker);
                 };
 
-            createMarker(bars);
+            for (var i = 0; i < bars.length; i++){
+                createMarker(bars[i]);
+            }
 
             $scope.openInfoWindow = function(e, selectedMarker){
                 e.preventDefault();
                 google.maps.event.trigger(selectedMarker, 'click');
             };
-
-
-            };
-
+        };
     });
