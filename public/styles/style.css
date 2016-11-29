@@ -169,14 +169,29 @@ h2 {
   width: 100%; }
 
 .team-join-button {
-  font-size: 0.5rem;
   margin-right: -22%;
   margin-top: -15%;
   font-size: 0.75rem;
   height: 75%; }
 
+.individual-event {
+  padding-bottom: 1%; }
+
+.event-join-button {
+  margin-left: -96%;
+  margin-top: -30%;
+  font-size: 0.75rem;
+  height: 75%;
+  width: 250%; }
+
 #teams {
   width: 45%; }
+
+#events {
+  width: 45%;
+  position: fixed;
+  left: 55%;
+  top: 15%; }
 
 .team-list {
   margin: 0; }
@@ -188,3 +203,7 @@ h2 {
 .title {
   font-size: 2rem;
   text-align: center; }
+
+#logged-in {
+  padding-left: 5%;
+  margin-top: 1%; }

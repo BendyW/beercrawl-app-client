@@ -1,4 +1,4 @@
-<div ng-show="session.loggedIn">
+<div id="logged-in" ng-show="session.loggedIn">
     <p> yo u logged in </p>
 </div>
 
@@ -23,16 +23,16 @@
 
 <div id="events">
     <div ng-show="joinedTeam" id="event-list">
-        <h1> welcome to team {{session.team_name}}</h1>
+        <h1> welcome to the team, {{session.user_name}}!</h1>
         <h1> join an event! </h1>
-        <div ng-mouseenter="eventJoiner = true" ng-mouseleave="eventJoiner = false" ng-init="eventJoiner = false" ng-repeat="event in events">
-            <h4>{{event.event_name}}</h4>
-            <p>{{event.bar_crawl}}</p>
-            <p>{{event.start_time}}</p>
+        <div class="individual-event" ng-mouseenter="eventJoiner = true" ng-mouseleave="eventJoiner = false" ng-init="eventJoiner = false" ng-repeat="event in events">
+            <h3>{{event.event_name}}</h3>
+            <p>CRAWL: {{event.bar_crawl}}</p>
+            <p>TIME: {{event.start_time}}</p>
             <div class = "event-join-button" ng-show="eventJoiner">
-                <form ng-submit="joinEvent(event.id)">
+                <form ng-submit="joinEvent(event.id)" class="individual-event">
                     <input type="hidden" ng-model="event.id">
-                    <input type="submit" value="join {{event.event_name}}" >
+                    <input type="submit" value="join {{event.event_name}}" class="event-join-button">
                 </form>
             </div>
         </div>

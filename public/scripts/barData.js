@@ -3,15 +3,6 @@ var wickerParkCenter = {
     lng: -87.6778288
 };
 var wickerParkBars = [
-    // {
-    //     name: 'The Violet Hour',
-    //     address:'1520 N Damen Ave, Chicago, IL 60622',
-    //     challenge1: 'dope speakeasy bar thing',
-    //     challenge2: 'lotzzz of maps',
-    //     challenge3: 'lotzzz of maps',
-    //     lat: '41.909086',
-    //     lng: '-87.6778288'
-    // },
     {
         name: 'The Map Room',
         address:'1949 N Hoyne Ave, Chicago, IL 60647',
